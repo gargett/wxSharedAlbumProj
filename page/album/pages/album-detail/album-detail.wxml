@@ -1,0 +1,115 @@
+<import src='/page/template/confirm-box/confirm-box.wxml'/>
+<import src='./template/album-detail-batch-user/album-detail-batch-user.wxml'/>
+<import src='./template/album-detail-batch-pics/album-detail-batch-pics.wxml'/>
+<import src='./template/album-detail-batch-control/album-detail-batch-control.wxml'/>
+<import src='./template/album-detail-batch-comment/album-detail-batch-comment.wxml'/>
+<import src='./template/album-detail-batch-morefun/album-detail-batch-morefun.wxml'/>
+
+<view id='album-detail'>
+  <view id='detail_nav'>
+    <navigator open-type='reLaunch' url='/page/album/index' class='nav_control' id='backhome'>
+      <image src="http://bigdata.drpeng.com.cn/shared_static/images/icon_fanhuizhuye@2x.png" mode='aspectFill'></image>
+      主页
+    </navigator>
+    <view id="memberTouxiang"></view>
+    <button class='nav_control' id='nav_invite' open-type="share" data-zhuanfaType="album">
+      <image src="http://bigdata.drpeng.com.cn/shared_static/images/icon_tianjia@2x.png" mode='aspectFill'></image>
+      邀请
+    </button>
+    <button class='nav_control' id='nav_setting' catchtap='toEditAlbum'>
+      <image src="http://bigdata.drpeng.com.cn/shared_static/images/icon_shezhi@2x.png" mode='aspectFill'></image>
+      设置
+    </button>
+  </view>
+  <view id="albumDetail">
+    <view id="album">
+      <view id="cover" catchtap='{{albumDetail.shared_album_is_owner == 1?"toChangeCover":"imgPreview"}}' data-locate_path="{{ albumDetail.shared_album_cover }}">
+        <image src="{{ albumDetail.shared_album_cover ? 'http://bigdata.drpeng.com.cn/album_static/'+albumDetail.shared_album_cover : '' }}" mode='aspectFill'></image>
+      </view>
+      <view id="title" catchtap="showTitleBlock" data-sharedAlbumIsOwner="{{ albumDetail.shared_album_is_owner }}">
+        <text>{{ albumDetail.shared_album_title }}</text>
+        <image src="http://bigdata.drpeng.com.cn/shared_static/images/icon_bianji@2x.png"></image>
+        <text id='album_img_num'>{{albumDetail.album_pic_count}}张</text>
+        <text id='album_mem_num'>{{ albumDetail.album_user_count }}人</text>
+      </view>
+      <view id="user" handler='go_to_user'>
+        <view id="adminTouxiang">
+          <image src="{{ albumDetail.admin_headimgurl ? 'http://bigdata.drpeng.com.cn/album_static/' + albumDetail.admin_headimgurl : '' }}" mode='aspectFill'></image>
+        </view>
+        <view id="adminUserName" >{{ albumDetail.admin_nick_name }}</view>
+      </view>
+    </view>  
+
+
+    <!-- 如果没上传过图片 -->
+    <block wx:if="{{ album_batch_list.length == 0 }}">
+     <view id="noPicList">
+        <view id="upload" class='greenboxshadow'  catchtap='showUploadBlock'><image src="http://bigdata.drpeng.com.cn/shared_static/images/camera.png"></image>
+          <view>上传</view>
+        </view>
+      </view> 
+    </block>
+    <!-- 上传过图片 -->
+    <block wx:else>
+      <view id="hasPicList">
+        <view id="timeLine">
+          <view id="timeLine_header"><view>时间轴</view></view>
+          <view id="timeLinePic">
+            <block wx:for="{{ album_batch_list }}" wx:key="{{ item.batch_id }}">
+              <view class="timeLinePic_item" batch_id="{{ item.batch_id }}">
+                  <template is="album-detail-batch-user" data="{{ ...item }}"></template>
+                  <view class="timeLinePic_item_content">{{ item.batch_text }}</view>
+                  <template is="album-detail-batch-pics" data="{{ ...item }}"></template>
+                  <template is="album-detail-batch-control" data="{{ ...item, animationData:likeAnimation }}"></template>
+                  <template is="album-detail-batch-comment" data="{{ ...item, isAlbumOwner:albumDetail.shared_album_is_owner}}"></template>
+              </view>
+            </block>
+          </view>
+          <view id='loadMoreMsg'>{{state.batchIsLoading?"加载中...":"到底了，亲～"}}</view>
+        </view>
+        <view id="upload_hasPicList" class='greenboxshadow' catchtap='showUploadBlock'>
+          <image src="http://bigdata.drpeng.com.cn/shared_static/images/camera.png"></image> 
+          <view>上传</view>
+        </view>
+      </view>
+    </block>
+    
+    <!-- 更多功能板块 -->
+    <template is="album-detail-batch-morefun" data="{{ ...item, moreFunShow:state.moreFunShow, batchSelectedIfTop:state.batchSelectedIfTop, batchOwnerType:state.batchOwnerType, sharedAlbumIsOwner:state.sharedAlbumIsOwner }}"></template>
+
+    <!-- 评论弹层 -->
+    <view id="comment_div" hidden="{{!state.commentBlockShow}}">
+      <view id="comment_mask" catchtouchstart='hideCommentBlock'></view>
+      <view id="comment_content">
+        <input type="text" placeholder="{{placeholderText}}" focus="{{state.commentFocus}}" value='{{comment_text}}' bindblur="setCommentText" confirm-type="send" bindconfirm="sendComment"/>
+        <view catchtap='sendComment'>发送</view>
+      </view>
+    </view>
+
+    <!-- 上传批次弹层 -->
+    <view id="uploadmask" class=""  catchtap='hideUploadBlock' hidden='{{!state.uploadBlockShow}}'>
+      <view id="uploadcontent">
+        <view id="uploadcontent_ul">
+          <view class="upload_item" catchtap='selectUploadType' data-uploadtype='album'>相册</view>
+          <view class="upload_item" catchtap='selectUploadType' data-uploadtype='camera'>照相</view>
+          <view class="upload_item" catchtap='selectUploadType' data-uploadtype='piclib'>图库</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 修改标题弹窗 -->
+    <view id="changeTitle" hidden='{{!state.titleBlockShow}}'>
+      <view id="changeTitle_body">
+        <view id="changeTitle_header">修改相册名称</view>
+        <view id="changeTitle_input">
+          <input bindinput="titleInput" type="text" maxlength="10" placeholder="最大输入长度10" value="{{changeTitleText}}"/>
+        </view>
+        <view id="numLimit"><span>{{changeTitleText.length}}</span>/10 仅限10字</view>
+        <view id="cancel" catchtap="cancelChangeTitle">取消</view>
+        <view id="confirm" catchtap="confirmChangeTitle">确定</view>
+      </view>
+    </view>
+
+  </view>
+</view> 
+  

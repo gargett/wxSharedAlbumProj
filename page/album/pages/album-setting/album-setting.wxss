@@ -1,0 +1,73 @@
+/* page/album/pages/album-setting/album-setting.wxss */
+#album-setting {
+  padding: 0 20rpx;
+}
+.back-detail {
+  width: 150rpx;
+  height:54rpx;
+  line-height:56.25rpx;
+  text-align: center;
+  margin-left:15.75rpx;
+  border-radius:27rpx;
+  display: inline-block;
+  font-size:27.75rpx;
+  vertical-align: middle;
+  background: #20d575;
+  color:white;
+}
+
+.content{
+    position: fixed;
+    width: 464.25000000000006rpx;
+    height: 89.25rpx;
+    border-radius: 50.25rpx;
+    border: 1rpx solid #666666;
+    color: #666666;
+    line-height: 89.25rpx;
+    text-align: center;
+    bottom: 45rpx;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-size: 36rpx;
+} 
+
+  .setting-li{
+     display: flex;
+     flex-direction:row; 
+     justify-content: space-between;
+     align-items: center;
+     border-bottom: 1rpx solid #ededed;
+    height: 126.75rpx;
+    line-height: 126.75rpx;
+    box-sizing: content-box;
+    font-size: 33.75rpx;
+  }
+  .img-li{
+    padding: 5rpx;
+    width:50rpx; 
+    height:50rpx;
+    vertical-align:middle;
+
+  }
+  .img-li-gt{
+    width: 20rpx;
+    height: 20rpx;
+  }
+  .text-li {
+    margin-left:20rpx;
+    vertical-align:middle;
+  }
+  #albumTitileView{
+    display: flex;
+    flex-direction:row; 
+    justify-content: space-between;
+    padding: 0 20.25rpx;
+    font-size: 27.75rpx;
+    color: #999999;
+  }
+  input {
+    padding: 10rpx;
+    color: black;
+  }
+  

@@ -1,0 +1,702 @@
+@import "./template/album-detail-batch-morefun/album-detail-batch-morefun.wxss";
+@import "/page/template/confirm-box/confirm-box.wxss";
+image {
+  width: 100%;
+  height: 100%;
+}
+button {
+  margin: 0;
+  padding: 0;
+}
+#album-detail {
+  min-height: 100%;
+}
+#albumDetail {
+  background: transparent;
+  padding: 86.25rpx 20.25rpx 0;
+  z-index: 1;
+  padding-bottom: 150rpx;
+}
+
+#album {
+  width: 100%;
+  padding:19.9995rpx;
+  background: white;
+  padding-top:34.5rpx;
+}
+
+#member {
+  text-align: right;
+  padding-bottom:20.25rpx;
+  font-size:30rpx;
+}
+
+#memberTouxiang,
+#memberNum {
+  display: inline-block;
+  height:53.25rpx;
+  text-align: right;
+  vertical-align: top;
+  line-height:53.25rpx;
+  font-size: 26.25rpx;
+  font-weight: bolder;
+}
+#memberTouxiang {
+  margin-right: -.15  rem;
+  overflow: hidden;
+  width: 225rpx;
+}
+.memberTouxiang_item:nth-of-type(1) {
+  margin-right: 0 !important;
+  z-index: 2
+}
+.memberTouxiang_item {
+  width:53.25rpx;
+  height:53.25rpx;
+  border-radius:33.75rpx;
+  display: inline-block;
+  margin-right: -.2025rpx;
+  border: 1rpx solid #d9d9d9;
+  overflow: hidden;
+  float: right;
+}
+.memberTouxiang_item image{
+  width: 100%;
+  height: 100%;
+}
+#cover {
+  width: 100%;
+  height: 267rpx;
+  position: relative;
+  overflow: hidden;
+}
+#cover image {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  margin-top: 133.5rpx;
+  transform: translate(0,-50%);
+  pointer-events: none;
+}
+
+#title {
+  width: 100%;
+  padding:22.5rpx 0 22.5rpx 0;
+  line-height:39.75rpx;
+  font-size: 37.9999995rpx;
+}
+
+#title image:nth-of-type(1) {
+  width:30rpx;
+  height:30rpx;
+  margin-left:24.75rpx;
+}
+#title span:nth-of-type(1) {
+  font-size:38.25rpx;
+  font-weight: bold;
+}
+#user {
+  padding: 0 0 20.25rpx 0;
+  overflow: hidden;
+}
+#user::after {
+  content: '';
+  float: right;
+  width:17.25rpx;
+  height:29.25rpx;
+  /* background: url(/shared_static/images/next.png) no-repeat center;
+  background-size: cover; */
+  margin-top:15rpx;
+}
+#adminTouxiang {
+  width:60rpx;
+  height:60rpx;
+  border-radius:30rpx;
+  float: left;
+  border: 1rpx solid #d9d9d9;
+  overflow: hidden;
+}
+#adminUserName {
+  height:60rpx;
+  float: left;
+  font-size:30rpx;
+  line-height:60rpx;
+  margin-left:9.75rpx;
+}
+
+#user div:nth-child(3) {
+  background: #20d575;
+  width: 99.75rpx;
+  height:39.75rpx;
+  float: right;
+  color: white;
+  border-radius:5.250000000000001rpx;
+  font-size:27.75rpx;
+  text-align: center;
+  margin-top:15rpx;
+}
+
+#user div:nth-child(4) {
+  background: #ffb135;
+  width: 84.74999999999999rpx;
+  height:39.75rpx;
+  float: right;
+  color: white;
+  border-radius:5.250000000000001rpx;
+  font-size:27.75rpx;
+  text-align: center;
+  margin-right:24rpx;
+  margin-top:15rpx;
+}
+#user div:nth-child(4) a{
+  color: white;
+}
+#upload,
+#invite {
+  width: 113.25rpx;
+  height: 113.25rpx;
+  position: fixed;
+  border-radius: 167.25rpx;
+  text-align: center;
+  bottom:32.25rpx;
+  font-size:21.000000000000004rpx;
+  font-weight: bold;
+}
+
+#upload {
+  left: 0;
+  right: 0;
+  margin: auto;
+  background: #20d575;
+  color: white;
+}
+
+#invite {
+  bottom: 149.25rpx;
+  background: white;
+  color:#666666;
+  border: 1rpx solid #666666;
+}
+
+#upload image,
+#invite image {
+  margin: auto;
+  width:66rpx;
+  height:54.75rpx;
+  margin-top: 15rpx;
+}
+
+#cover span {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: white;
+  font-size:27.75rpx;
+  font-weight: bolder;
+}
+
+
+#noPicList.active, #hasPicList.active {
+  display: block;
+}
+#back_to_index.nopic {
+  right:20.25rpx !important;
+  bottom:52.5rpx !important;
+}
+#detail_nav {
+  height: 90rpx;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  text-align: right;
+  line-height: 90rpx;
+  background: white;
+  box-shadow: 0 -8rpx 10rpx 10rpx #f3f3f3;
+  padding: 20.25rpx;
+  font-size: 0;
+}
+#detail_nav ul {
+  display: inline-block;
+  vertical-align: middle;
+}
+.nav_control,#backhome {
+  width: 123.75rpx;
+  height:54rpx;
+  line-height:56.25rpx;
+  text-align: center;
+  margin-left:15.75rpx;
+  border-radius:27rpx;
+  display: inline-block;
+  font-size:27.75rpx;
+  /* vertical-align: middle; */
+}
+#backhome::before {
+  margin-top: -5.250000000000001rpx !important;
+}
+
+#nav_invite {
+  color: white;
+  background: #20d575;
+}
+#nav_setting {
+  border: 1rpx solid #333333;
+  background: white;
+}
+#nav_invite::before {
+  /* background: url(/shared_static/images/icon_tianjia@2x.png) no-repeat center;
+  background-size: 100% auto; */
+}
+#nav_setting::before {
+  /* background: url(/shared_static/images/icon_shezhi@2x.png) no-repeat center;
+  background-size: 100% auto; */
+}
+#backhome {
+  float: left;
+  margin-left: 0 !important;
+  color: white;
+  background: #20d575;
+}
+#backhome image {
+  width: 11.25rpx;
+  height: 21rpx;
+}
+#album_img_num, #album_mem_num {
+  float: right;
+  font-size:30rpx !important;
+  color:#666666;
+  margin-left:20.25rpx;
+}
+#album_mem_num::after {
+  content: '|';
+  display: inline-block;
+  margin-left: 20.25rpx;
+}
+#like_icon {
+  display: inline-block;
+  width:33.75rpx;
+  height:33.75rpx;
+  margin-right:9.75rpx;
+  margin-top: -.900rpx;
+  vertical-align:middle;
+}
+.nav_control image {
+  content: '';
+  display: inline-block;
+  width: 29.25rpx;
+  height: 29.25rpx;
+  margin-right: 9rpx;
+  vertical-align: middle;
+  margin-top: -7.5rpx;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* list */
+#timeLine {
+
+}
+#timeLine_header {
+  padding:30rpx 20.25rpx;
+  font-size:33.75rpx;
+}
+
+#timeLine_header view:nth-of-type(1) {
+  color: #666666;
+}
+
+#timeLine_header view:nth-of-type(2) {
+  margin-left:15rpx;
+}
+#timeLinePic {
+  background: transparent;
+  margin-bottom: -21.75rpx;
+}
+.timeLinePic_item {
+  background: white;
+  margin-bottom:21.75rpx;
+  padding:20.25rpx 20.25rpx;
+}
+
+.timeLinePic_item_user {
+  padding:15rpx 0;
+  position: relative;
+}
+
+.user_touxiag,
+.userDateLocal,
+.more {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.user_touxiag {
+  width: 78rpx;
+  height: 78rpx;
+  border-radius:39rpx;
+  border: 1rpx solid #d9d9d9;
+  overflow: hidden;
+}
+
+.userDateLocal {
+  /* height: 78rpx; */
+  margin-left:20.25rpx;
+  /* overflow: hidden; */
+  box-sizing: content-box;
+  padding-bottom: 7.5rpx;
+}
+.userDateLocal .userName {
+  font-size:33.75rpx;
+  font-weight: bold;
+}
+.userDateLocal .dateAndLocal {
+  font-size:26.25rpx;
+  color: #999999;
+}
+.dateAndLocal {
+  max-width: 487.5rpx;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.more {
+  width: 78rpx;
+  height: 78rpx;
+  line-height: 78rpx;
+  font-size: 52.5rpx;
+  color: #3c3c3c;
+  text-align: center;
+  position: absolute;
+  top: -22.5rpx;
+  bottom: 0;
+  right: -7.5rpx;
+  margin: auto;
+}
+
+.timeLinePic_item_content {
+  padding:15rpx 0;
+  font-size:33.75rpx;
+}
+
+.timeLinePic_item_pics {
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  margin: -5rpx;
+}
+
+.timeLinePic_item_control {
+  font-size: 0;
+}
+.zhuanfa,
+.comment,
+.like {
+  width: 15%;
+  height: 80.25rpx;
+  text-align: center;
+  line-height: 80.25rpx;
+  display: inline-block;
+  font-size:33.75rpx;
+  color: #666666;
+  vertical-align: top;
+}
+.zhuanfa {
+  float: right;
+  text-align: right;
+  background: transparent;
+  border: 0;
+}
+.zhuanfa::after {
+  border: 0;
+}
+.zhuanfa image,
+.comment image,
+.like image {
+  width:32.25rpx;
+  height:32.25rpx;
+  margin-right:9.75rpx;
+  vertical-align: middle;
+  margin-top: -.525rpx;
+}
+.like image  {
+  float: left;
+}
+#upload_hasPicList,
+#invite_hasPicList {
+  width: 113.25rpx;
+  height: 113.25rpx;
+  position: fixed;
+  border-radius: 167.25rpx;
+  text-align: center;
+  bottom:32.25rpx;
+  font-size:21.000000000000004rpx;
+  font-weight: bold;
+}
+#upload_hasPicList image,
+#invite_hasPicList image {
+  margin: auto;
+  width:66rpx;
+  height:54.75rpx;
+  margin-top: 15rpx;
+}
+#upload_hasPicList {
+  left: 0;
+  right: 0;
+  margin: auto;
+  /* background: url(/shared_static/images/album_detail/upload_bg.png) no-repeat center;
+  background-size: 105% auto; */
+  background: #20d575;
+  color: white;
+}
+
+#invite_hasPicList {
+  right:30rpx;
+  border: 1rpx solid black;
+  background: white;
+  color:#666666;
+  border: 1rpx solid #666666;
+}
+.timeLinePic_item_comment {
+  font-size:27.75rpx;
+  color: #666666;
+
+}
+.timeLinePic_item_comment text {
+  color: black;
+}
+.timeLinePic_item_pics_item {
+  overflow: hidden;
+  float: left;
+  margin:5rpx;
+}
+
+.greenboxshadow {
+  /* box-shadow: 0 0 37.5rpx 3.75rpx #cef9e4;; */
+}
+#loadMoreMsg {
+  margin: 20.25rpx;
+  margin-bottom: 0;
+  margin-top: 37.5rpx;
+  text-align: center;
+  color: #7f7c7c;
+}
+.user_touxiag image {
+  width: 100%;
+  height: 100%;
+}
+.timeLinePic_item_pics_item image {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+/* 评论弹窗 */
+#comment_div {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+}
+#comment_div.active {
+  display: block;
+}
+#comment_mask {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 101;
+  background: rgba(0,0,0,0.5)
+}
+#comment_content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 97.5rpx;
+  line-height: 97.5rpx;
+  text-align: center;
+  background: white;
+  z-index: 102;
+}
+#comment_content.adjustIOS {
+  top: 100rpx;
+}
+#comment_content input {
+  width: 600rpx;
+  height:60rpx;
+  font-size:27.75rpx;
+  border: 0;
+  background: #e5e5e5;
+  color:#999999;
+  margin-right:9.75rpx;
+  vertical-align: middle;
+  padding:9.75rpx20.25rpx;
+  border-radius:9.75rpx;
+  display: inline-block;
+}
+#comment_content view {
+  display: inline-block;
+  padding:30rpx9.75rpx;
+  font-size:30rpx;
+  line-height: normal;
+  vertical-align: middle;
+  color: #20d575;
+}
+
+
+
+/* 上传批次弹层 */
+#uploadmask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 6;
+  background: rgba(0,0,0,0.5);
+}
+#uploadcontent {
+  width: 100%;
+  height: 100%;
+  top:0;
+  left: 0;
+  position: absolute;
+  background: transparent;
+  text-align: center;
+}
+#uploadcontent #uploadheader {
+  font-size: 60rpx;
+  padding: 39.75rpx;
+  font-weight: bold;
+}
+#uploadcontent #uploadcontent_ul{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgb(255, 255, 255);
+  /* box-shadow: 0 8rpx 10rpx 10rpx #f3f3f3; */
+}
+#uploadcontent .upload_item {
+  height: 120rpx;
+  font-size:33.75rpx;
+  padding: 39.75rpx;
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 1rpx solid #ededed;
+}
+@keyframes uploadmask_show {
+  from {opacity: 0;z-index:-1;}
+  to {opacity: 1;z-index:7;}
+}
+@keyframes uploadcontent_show {
+  from {transform: translate(0, 300rpx);}
+  to {transform: translate(0, 0);}
+}
+@keyframes albumdetail_aniblur {
+  from {filter: blur(0);}
+  to {filter: blur(50rpx);}
+}
+@keyframes uploadmask_out {
+  from {opacity: 1;z-index:7;}
+  to {opacity: 0;z-index:-1;}
+}
+@keyframes uploadcontent_out {
+  from {transform: translate(0, 0);}
+  to {transform: translate(0, 300rpx);}
+}
+@keyframes albumdetail_out {
+  from {filter: blur(50rpx);}
+  to {filter: blur(0);}
+}
+
+
+/* 修改标题 */
+#changeTitle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 6;
+}
+
+#changeTitle_body {
+  box-sizing: content-box;
+  width: 710.25rpx;
+  height: 489.75rpx;
+  background: white;
+  margin: auto;
+  position: absolute;
+  top: 104.24999999999999rpx;
+  left: 0;
+  right: 0;
+}
+
+#changeTitle_header {
+  height: 80.25rpx;
+  line-height: 80.25rpx;
+  text-align: center;
+  background: #20d575;
+  color: white;
+  font-size:36rpx;
+}
+
+#changeTitle_input {
+  padding: 20.25rpx;
+  margin-top:50.25rpx;
+}
+
+#numLimit {
+  text-align: right;
+  padding: 20.25rpx;
+  font-size:27.75rpx;
+  color:#999999;
+}
+
+#changeTitle_input input {
+  width:678.75rpx;
+  height:99.75rpx;
+  padding:0 20.25rpx;
+  background:#e5e5e5;
+  font-size:33.75rpx;
+  border:0;
+  margin-bottom:8.25rpx;
+  box-sizing:border-box;
+}
+
+#cancel,
+#confirm {
+  width: 354.75000000000006rpx;
+  height: 116.25rpx;
+  border-top: 1rpx solid #ededed;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  line-height: 116.25rpx;
+  font-size:33.75rpx;
+}
+#cancel {
+  left: 0;
+  border-right: 1rpx solid #ededed;
+}
+#confirm {
+  right: 0;
+  color: #20d575;
+}

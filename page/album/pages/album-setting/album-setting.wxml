@@ -1,0 +1,56 @@
+<!--page/album/pages/album-setting/album-setting.wxml-->
+<view id="album-setting">
+   <!-- <view id='detail_nav'>
+    <navigator url = "/page/album/pages/album-detail/album-detail?shared_album_id={{shared_album_id}}>
+      <button  id='back-detail' class='back-detail' >{{char_lt}} 返回 </button>
+    </navigator>
+  </view>  -->
+  
+     <navigator url = "{{memberUrl}}">
+     <view  class="setting-li">
+       <view>
+        <image src="http://bigdata.drpeng.com.cn/shared_static/images/qun.png" mode="aspectFit"  class='img-li' ></image>
+        <text  class="text-li">   相册成员</text>
+       </view>
+      <image src="http://bigdata.drpeng.com.cn/shared_static/images/aboutme_go.png" mode="aspectFill"  class='img-li-gt'></image>
+      </view>  
+     </navigator>
+   
+    
+    <view  class="setting-li"  wx:if="{{is_manager == 1}}"  bindtap='changeTitile'>
+      <view>
+      <image src="http://bigdata.drpeng.com.cn/shared_static/images/biaoqian.png"  mode="aspectFit"  class='img-li' ></image>
+      <text class="text-li">    相册名称</text>
+      </view>
+      <image src="http://bigdata.drpeng.com.cn/shared_static/images/aboutme_go.png" mode="aspectFill"  class='img-li-gt'></image>
+    </view> 
+    
+    
+    <navigator url="{{changeCoverUrl}}" wx:if="{{is_manager == 1}}" >
+      <view class="setting-li"  id='changeCover'>
+        <view>
+        <image src="http://bigdata.drpeng.com.cn/shared_static/images/zhaopian.png" mode="aspectFit"  class='img-li' ></image>
+        <text class="text-li">    相册封面</text>
+        </view>
+        <image src="http://bigdata.drpeng.com.cn/shared_static/images/aboutme_go.png" mode="aspectFill"  class='img-li-gt'> </image>
+      </view>
+    </navigator>
+
+
+  <modal hidden="{{hiddechangeTitile}}" title="修改相册名称" confirm-text="确定" cancel-text="取消" bindcancel="cancelchangeTitile" bindconfirm="confirmchangeTitile" style="">   
+    <input type='text' style='background-color:#d0d0d0;height:80rpx' maxlength='10' placeholder='输入相册名称' value="{{albumTitile}}" bindinput='titleInput'/>  
+     <view id="albumTitileView">
+         <view></view>
+         <text>{{albumTitile.length}}/10 仅限10字</text>
+       </view>
+  </modal> 
+
+  <modal hidden="{{hiddeconfirmBox}}" title="{{confirmBoxText}}" confirm-text="确定" cancel-text="取消" bindcancel="confirmBoxCancel" bindconfirm="confirmBoxConfirm" style="">  
+  </modal> 
+
+
+  <view wx:if="{{is_manager==1}}" id='changeCover' class='content'  bindtap='confirmBoxHidde' data-text="解散相册">解散相册</view>
+  <view  wx:else  bindtap="confirmBoxHidde" class='content' data-text="退出相册" >退出相册</view>
+
+</view>
+  

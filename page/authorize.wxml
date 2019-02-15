@@ -1,0 +1,4 @@
+<view id="authorize">
+    <button hidden='{{isAuth}}' open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+    <text hidden='{{!isLoading}}'>加载中...</text>
+</view>

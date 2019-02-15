@@ -1,0 +1,50 @@
+#picLib {
+  padding-top:90rpx;
+  padding-bottom:130rpx;
+}
+#picLib ul {
+  margin: 0 -.1125rpx;
+  font-size: 0;
+}
+#picLib .picLib_item {
+  width: 239rpx;
+  height: 360rpx;
+  position: relative;
+  margin: 5.8rpx;
+  display: inline-block;
+}
+#picLib .picLib_item image {
+  width: 100%;
+  height: 100%;
+}
+.picLib_item_tick {
+  width:50.25rpx;
+  height:50.25rpx;
+  position: absolute;
+  top:8.25rpx;
+  right:8.25rpx;
+}
+#picLib_upload {
+  width: 324.75rpx;
+  height: 89.25rpx;
+  position: fixed;
+  border-radius: 167.25rpx;
+  text-align: center;
+  line-height: 89.25rpx;
+  bottom:32.25rpx;
+  font-size:36rpx;
+  left: 0;
+  right: 0;
+  margin: auto;
+  color: white;
+  background: #20d575;
+}
+#loadMoreMsg {
+  margin-bottom:0;
+  text-align:center;
+  color:#7f7c7c;
+}
+#picLib_ul {
+  padding: 4.5rpx;
+  font-size: 0;
+}

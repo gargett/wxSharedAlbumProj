@@ -1,0 +1,9 @@
+<template name="album-detail-batch-pics">
+  <view class="timeLinePic_item_pics">
+    <block wx:for="{{ pic_list }}" wx:key="{{item.picture_id}}">
+    <view style="width:{{item.pic_wid}}rpx; height:{{item.pic_height}}rpx;" class="timeLinePic_item_pics_item" catchtap="imgPreview" picture_id="{{ item.picture_id }}" data-locate_path="{{ item.locate_path }}">
+       <image mode="aspectFill" src="http://bigdata.drpeng.com.cn/album_static/{{ item.locate_path }}"></image> 
+    </view>
+    </block>
+  </view>
+</template>

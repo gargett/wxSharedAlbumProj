@@ -1,0 +1,13 @@
+<template name="album-detail-batch-comment">
+  <view class="timeLinePic_item_comment">
+    <view batch_id="{{ batch_id }}">
+      <block wx:for="{{ com_list }}" wx:key="{{ item.comment_id }}">
+        <view class=" timeLinePic_item_comment" data-role="{{item.comment_is_owner == 1 ? 'self' : 'others'}} {{isAlbumOwner == 1 ? 'owner' : ''}}" bindlongpress="{{item.comment_is_owner == 1 ? 'withdrawComment':''}}" bindtap="{{item.comment_is_owner != 1 ? 'showCommentBlock':''}}" data-comment_nick="{{ item.comment_nick }}" data-comment_openid="{{ item.comment_openid }}" data-commentId="{{ item.comment_id }}" data-batch_id="{{ batch_id }}">
+          <text>{{ item.comment_nick }} </text>
+          <block wx:if="{{item.reply_nickname}}">回复 <text> {{ item.reply_nickname }}</text> </block>
+          ：{{ item.comment_content }}
+        </view>
+      </block>
+    </view>
+  </view> 
+</template>

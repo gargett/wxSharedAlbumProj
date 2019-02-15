@@ -1,0 +1,16 @@
+<template name="album-detail-batch-control">
+  <view class="timeLinePic_item_control">
+    <view class="like" catchtap='toggleLike' data-batch_id="{{ batch_id }}">
+      <view id="like_icon" data-islike="{{isLiked}}" class="{{ isLiked?'liked':'' }}" animation="{{animationData}}">
+        <image wx:if="{{isLiked}}" src="http://bigdata.drpeng.com.cn/shared_static/images/icon_zan_gongxiang@3x.png"></image>
+        <image wx:else src="http://bigdata.drpeng.com.cn/shared_static/images/dianzang_gongxiang@3x.png"></image>
+      </view>
+      <text>{{ like_count }}</text>
+    </view>
+    <view class="comment" catchtap='showCommentBlock' data-batch_id="{{ batch_id }}">
+      <image src="http://bigdata.drpeng.com.cn/shared_static/images/icon_pinglun_gongxiao@3x.png"></image>
+      <text>{{ com_list.length }}</text>
+    </view>
+    <button open-type="share" class="zhuanfa" data-batch_id="{{ batch_id }}" data-batch_share_cover="{{ pic_list[0]?pic_list[0].locate_path:'' }}" data-batch_share_desc="{{ batch_text }}" data-zhuanfaType='gushi'><image src="http://bigdata.drpeng.com.cn/shared_static/images/fenxiang_gongxiang@3x.png"></image></button>
+  </view>
+</template>

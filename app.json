@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "page/album/index",
+    "page/authorize",
+    "page/album/pages/member/member",
+    "page/album/pages/album-setting/album-setting",
+    "page/album/pages/album-detail/album-detail",
+    "page/album/pages/add-album/add-album",
+    "page/album/pages/upload-batch/upload-batch",
+    "page/album/pages/change-cover/change-cover",
+    "page/album/pages/uploadbatch-select-piclib/uploadbatch-select-piclib",
+    "page/album/pages/search-album/search-album",
+    "page/album/pages/batch-preview/batch-preview",
+    "page/piclib/piclib",
+    "page/test/test1"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "香遇相册",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "page/album/index",
+        "iconPath": "image/icon_shouye_nor@2x.png",
+        "selectedIconPath": "image/icon_shouye_on@2x.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "page/piclib/piclib",
+        "iconPath": "image/icon_tuku_nor@2x.png",
+        "selectedIconPath": "image/icon_tuku_on@2x.png",
+        "text": "图库"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false
+}

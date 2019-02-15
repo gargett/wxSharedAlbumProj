@@ -1,0 +1,37 @@
+<view id="album">
+  <view id="album-banner">
+    <navigator id='search' url="/page/album/pages/search-album/search-album" hover-class="none"><image src="http://bigdata.drpeng.com.cn/shared_static/images/search.png"></image><view id="search_wenzi">请输入相册名搜索</view></navigator>
+    <swiper id='banner' autoplay="true" interval="5000" duration="500" circular="true">
+      <block wx:for="{{background}}" wx:key="*this">
+        <swiper-item>
+          <image src='{{item}}' mode='aspectFill'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view id="albumList">
+    <block wx:for-items="{{albumList}}" wx:key="{{item.id}}">
+        <navigator class="albumList_item registerHandler" url="/page/album/pages/album-detail/album-detail?shared_album_id={{item.shared_album_id}}" hover-class="none">
+          <image mode="aspectFill" class='albumList_item_cover' src="http://bigdata.drpeng.com.cn/album_static/{{item.shared_album_cover}}"></image>
+          <view class="set_top_btn registerHandler" handler="settop" data-if_top="{{item.if_top}}" data-shared_album_id="{{item.shared_album_id}}" catchtap="toggleSetTop">
+            <image wx:if="{{item.if_top==1}}" src="http://bigdata.drpeng.com.cn/shared_static/images/icon_shoucang_on@2x.png"></image>
+            <image wx:else src="http://bigdata.drpeng.com.cn/shared_static/images/xingxing.png"></image>
+          </view>
+          <view class="album_title">{{item.shared_album_title}}</view>
+          <view class="album_user_count"><image class='album_user_count_icon' src='http://bigdata.drpeng.com.cn/shared_static/images/qunzhu.png'></image>{{item.user_count}}</view>
+        </navigator>
+    </block>
+  </view>
+
+  <view class="shared_album_info">
+    <view class="album_info1">共享美好瞬间</view>
+    <view class="album_info2">和家人、朋友、同学共同存放照片</view>
+    <view class="album_info3">您可以根据任意主题创建相册</view>
+    <view class="album_info4">相册中的照片将以原图保存，永不过期</view>
+    <!-- <div class="album_info5"><span  class="album_info6">?</span>快速了解</view> -->
+  </view>
+  <navigator id="add_album_button" url="/page/album/pages/add-album/add-album" hover-class="none">
+    <image src='http://bigdata.drpeng.com.cn/shared_static/images/jiahao.png' mode="aspectFill"></image>
+    创建相册
+  </navigator>
+</view>

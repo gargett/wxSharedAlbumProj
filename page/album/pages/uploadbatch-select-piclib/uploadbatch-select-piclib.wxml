@@ -1,0 +1,10 @@
+<view id='picLib'>
+  <view id="picLib_ul">
+      <view class="picLib_item" catchtap="selectPic" wx:for="{{picList}}" wx:key="{{item.picture_id}}" wx:for-index="idx" data-idx="{{idx}}">
+        <image src="{{item.locate_path}}" mode="aspectFill"></image>
+        <view class="picLib_item_tick"><image src="{{item.isSelected?'http://bigdata.drpeng.com.cn/shared_static/images/tick3.png':'http://bigdata.drpeng.com.cn/shared_static/images/tick4.png'}}"></image></view>
+      </view>
+  </view>
+  <view id='loadMoreMsg'>{{isLoading?'加载中':'到底了，亲~'}}</view>
+  <view id="picLib_upload" catchtap='upload'>确定</view>
+</view>

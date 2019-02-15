@@ -1,0 +1,116 @@
+/* page/album/pages/member/member.wxss */
+page {
+  background: white;
+}
+#member {
+  padding-top:20rpx;
+}
+
+.back-detail {
+  width: 150rpx;
+  height:54rpx;
+  line-height:56.25rpx;
+  text-align: center;
+  margin-left:15.75rpx;
+  border-radius:27rpx;
+  display: inline-block;
+  font-size:27.75rpx;
+  vertical-align: middle;
+  background: #20d575;
+  color:white;
+  /* background-color: green  */
+}
+
+#search {
+  width: 714.75rpx;
+  height: 80rpx;
+  position: relative;
+  background: rgba(255, 255, 255, 0.9);
+  line-height: 80rpx;
+  padding: 0 17.25rpx;
+  z-index: 2;
+  margin: auto;
+  border-radius: 10rpx;
+  background: #F8F8F8;
+}
+#search image {
+  width: 38.25rpx;
+  height: 38.25rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+#search input {
+  height: 100%;
+  width: 600rpx;
+  vertical-align: middle;
+  background: transparent;
+  border: 0;
+  font-size: 28rpx;
+  color: #666666;
+  display: inline-block;
+  margin-left: 20rpx;
+}
+    
+.content{
+  font-family: 微软雅黑;
+  width: 60%;
+  bottom:40rpx;
+  border-radius:60rpx;
+  margin-left:20%;       
+  color:white;   
+  padding:0px;        
+  position:fixed;
+  text-align: center;
+  background-color: #20d575 
+} 
+.itemMember{
+  display: flex;
+  flex-direction:row;
+  justify-content:space-between;
+  width: 710.25rpx;
+  margin:auto;
+  position: relative;
+  border-bottom:1px #d0d0d0 solid;
+}
+.itemMember .headimg{  
+  display: inline-block;
+  vertical-align: middle;
+  width: 86.25rpx;
+  height: 86.25rpx;
+  border-radius: 42.74999999999999rpx;
+  border: 1px solid #d2d2d2;
+  margin-right: 18rpx;
+}
+.userName {
+  height: 150rpx;
+  line-height: 150rpx;
+  display: inline-block;
+}
+.owner {
+  display: inline-block;
+  width: 105rpx;
+  height: 150rpx;
+  line-height: 150rpx;
+  color: #666666;
+}
+.itemMember .gogo{  
+    display: inline-block;
+  width: 15.75rpx;
+  height: 27rpx;
+  }
+.view-radio{
+  display: flex;
+  flex-direction:row;
+  justify-content:space-between;
+
+}
+#memberList {
+  font-size: 33.75rpx;
+  padding-bottom: 200rpx;
+}
+#memberListCount{
+  padding: 20rpx;
+  display: flex;
+  flex-direction:row;
+  justify-content:space-between;
+}

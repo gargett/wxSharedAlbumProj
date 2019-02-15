@@ -1,0 +1,11 @@
+<view id="search_album">
+  <view id='search'>
+    <image src="http://bigdata.drpeng.com.cn/shared_static/images/search.png"></image>
+    <input focus='{{focus}}' bindinput="bindKeyInput" type="text" confirm-type="search" placeholder="输入相册名搜索" bindconfirm="bindconfirm"/>
+  </view>
+  
+  <view id="search_list_ul">
+    <navigator wx:for="{{searchList}}" wx:key="{{item.shared_album_id}}" url="/page/album/pages/album-detail/album-detail?shared_album_id={{item.shared_album_id}}" hover-class="none">{{item.shared_album_title}}</navigator>
+  </view>
+</view>
+

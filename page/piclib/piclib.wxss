@@ -1,0 +1,176 @@
+@import "/page/template/confirm-box/confirm-box.wxss";
+#picLib {
+  padding:9.75rpx;
+  font-size: 0;
+  padding-bottom: 225rpx;
+  overflow: hidden;
+  padding-top: 90rpx;
+}
+#picLib ul {
+  margin-left: 2.25rpx;
+}
+.picLib_item {
+  box-sizing: content-box;
+  padding:4.5rpx;
+  width: 352.5rpx;
+  display: inline-block;
+  margin-bottom:9rpx;
+  position: relative;
+}
+.picLib_item image {
+  pointer-events: none;
+}
+#picLib.editMode .tick{
+  display: block;
+}
+.picLib_item .tick {
+  width:50.25rpx;
+  height:50.25rpx;
+  position: absolute;
+  top:8.25rpx;
+  right:8.25rpx;
+}
+.picLib_item image {
+  width: 100%;
+}
+#piclib_upload {
+  width: 99.75rpx;
+  height: 99.75rpx;
+  position: fixed;
+  /* box-shadow: 0 0 3.75rpx 3.75rpx #d1fae6; */
+  bottom: 114.75rpx;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background: red;
+  background-size: 100% auto;
+}
+#upload_hasPicList{
+  width: 120rpx;
+  height: 120rpx;
+  position: fixed;
+  border-radius: 60rpx;
+  text-align: center;
+  bottom: 107.25rpx;
+  font-size:21.000000000000004rpx;
+  font-weight: bold;
+  bottom:20rpx;
+}
+#upload_hasPicList image {
+  margin: auto;
+  width:66rpx;
+  height:54.75rpx;
+  margin-top: 15rpx;
+}
+#upload_hasPicList {
+  left: 0;
+  right: 0;
+  margin: auto;
+  /* background: url(/shared_static/images/album_detail/upload_bg.png) no-repeat center;
+  background-size: 105% auto; */
+  background: #20d575;
+  color: white;
+}
+.greenboxshadow {
+  /* box-shadow: 0 0 37.5rpx 3.75rpx #cef9e4; */
+}
+#piclib_left, #piclib_right {
+  box-sizing: content-box;
+  padding:4.5rpx;
+  width: 352.5rpx;
+  float: left;
+}
+#picLibTabControl {
+  width: 100%;
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  text-align: right;
+  line-height: 90rpx;
+  background: #f4f4f4;
+  font-size: 0;
+  padding:0 20rpx;
+}
+.pivLibNavControl {
+  padding: 0 33.75rpx;
+  height:54rpx;
+  line-height:56.25rpx;
+  text-align: center;
+  margin-left:15.75rpx;
+  border-radius:27rpx;
+  display: inline-block;
+  font-size:27.75rpx;
+  vertical-align: middle;
+}
+#picLibDelete, #picLibLoadOrigin {
+  color: white;
+}
+#picLib.editMode #picLibDelete,#picLib.editMode #picLibLoadOrigin{
+  display: inline-block;
+}
+#picLibEdit {
+    border: 1rpx solid #333333;
+}
+#picLibLoadOrigin {
+  background: #20d575;
+}
+#picLibDelete  {
+  background: #ed4e4e;
+}
+#picLib .foot_box {
+  font-size:27.75rpx;
+  color: #7f7c7c;
+  text-align: center;
+  padding: 0 12.750000000000002rpx 12.750000000000002rpx 0;
+  width: 100%;
+  margin-top: 0;
+  float: left;
+}
+#hasNoPic {
+  padding-top: 347.25rpx;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 6;
+  background: white;
+}
+#hasNoPic div:nth-of-type(1){
+  width: 198rpx;
+  height: 155.25rpx;
+  margin: auto;
+  background: url(/shared_static/images/piclib_nopic.png) no-repeat center;
+  background-size: cover;
+}
+#hasNoPic div:nth-of-type(2) {
+  font-size:27.75rpx;
+  color: #999999;
+  text-align: center;
+  margin-top:15rpx;
+}
+#hasNoPic div:nth-of-type(3) {
+  font-size:33.75rpx;
+  color: white;
+  width: 315rpx;
+  height: 89.25rpx;
+  line-height: 89.25rpx;
+  border-radius:45rpx;
+  background: #20d575;
+  text-align: center;
+  margin: auto;
+  margin-top:63rpx;
+}
+#hasNoPic div:nth-of-type(3)::before {
+  content: '';
+  width:48.75rpx;
+  height:42.00000000000001rpx;
+  display: inline-block;
+  background: url(/shared_static/images/icon_tupian_on@2x.png) no-repeat center;
+  background-size: contain;
+  margin-right:9.75rpx;
+  vertical-align: middle;
+}
+.editMode #upload_hasPicList {
+  display: none;
+}

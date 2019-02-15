@@ -1,0 +1,20 @@
+<template name="album-detail-batch-morefun">
+  <view id="moreFunc"  style="display:{{moreFunShow?'block':'none'}}" data-ddd='{{batchSelectedIfTop}}'>
+    <view id="moreFunc_body">
+      <view id="moreFunc_cancel" bindtap='cancelMoreFun' handler="cancelMoreFun"><image mode="aspectFit" src="http://bigdata.drpeng.com.cn/shared_static/images/close.png"></image></view>
+      <view id="moreFunc_header">更多功能</view>
+      <view>
+        <!-- <view class="moreFunc_item" handler='synchronousBatch'>同步到图库<image mode="aspectFit" src="http://bigdata.drpeng.com.cn/shared_static/images/btn_next_shangchuan@2x.png"></image></view>
+        <view class="moreFunc_item" handler='loadOriginImg'>加载原图<image mode="aspectFit" src="http://bigdata.drpeng.com.cn/shared_static/images/btn_next_shangchuan@2x.png"></image></view> -->
+
+        <block wx:if="{{sharedAlbumIsOwner == '1'}}">
+          <view wx:if="{{batchSelectedIfTop == 0}}" class="moreFunc_item" id="settop" bindtap='settopBatch'>置顶<image mode="aspectFit" src="http://bigdata.drpeng.com.cn/shared_static/images/btn_next_shangchuan@2x.png"></image></view>
+          <view wx:else class="moreFunc_item" id="settop" bindtap='settopBatch'>取消置顶<image mode="aspectFit" src="http://bigdata.drpeng.com.cn/shared_static/images/btn_next_shangchuan@2x.png"></image></view>
+        </block>
+        
+
+        <view wx:if="{{sharedAlbumIsOwner == '1' || batchOwnerType == '1'}}" class="moreFunc_item" id="deleteBatch" bindtap='deleteBatch'>删除<image mode="aspectFit" src="http://bigdata.drpeng.com.cn/shared_static/images/btn_next_shangchuan@2x.png"></image></view>
+      </view>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,13 @@
+<view id="change_cover">
+  <view class="wenzi">上传相册封面</view>
+  <view id="upload" class='registerHandler' catchtap='showUploadBlock'>+</view>
+  <view id="uploadmask"  catchtap='cancleupload' hidden='{{!uploadBlockShow}}'>
+    <view id="uploadcontent">
+      <view id='uploadcontent_ul'>
+        <view class="upload_item" catchtap='uploadimg' data-uploadType="album">相册</view>
+        <view class="upload_item" catchtap='uploadimg' data-uploadType="camera">照相</view>
+        <!-- <view class="upload_item registerHandler" handler='uploadimg'>图库</view> -->
+      </view>
+    </view>
+  </view>
+</view>

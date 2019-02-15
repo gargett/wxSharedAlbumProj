@@ -1,0 +1,12 @@
+<view id='addAlbum'>
+  <view id="wenzi">请选择相册类型</view>
+  <view id="typeTab">
+    <block wx:for-items="{{albumTypes}}" wx:key="{{*this}}">
+      <view class="typeTab_item {{albumTypeSelected == item?'active':''}}" bindtap='pickTab' data-albumType='{{item}}'>{{item}}</view>
+    </block>
+    
+  </view>
+  <view class="{{albumTypeSelected != ''?'active':''}}" id="add_album_button" bindtap='addAlbum'>
+    <view></view><view>创建新的相册</view>
+  </view>
+</view>

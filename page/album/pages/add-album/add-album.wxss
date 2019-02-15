@@ -1,0 +1,63 @@
+#addAlbum {
+  height: 100%;
+  background: white;
+  padding: 60rpx 30rpx;
+}
+#wenzi {
+  height: 129.75rpx;
+  line-height: 129.75rpx;
+  color: #333333;
+  font-size:38.25rpx;
+}
+#add_album_button {
+  margin: auto;
+  width: 390rpx;
+  height: 89.25rpx;
+  border-radius:44.25rpx;
+  background: #f6f6f6;
+  background-size: 105% auto;
+  font-size:36rpx;
+  color: #999999;
+  margin-top: 77.25rpx;
+  line-height: 89.25rpx;
+  text-align: center;
+}
+#add_album_button.active {
+  background: #20d575;
+  color: white;
+}
+#add_album_button div {
+  width:42.74999999999999rpx;
+  height:42.74999999999999rpx;
+  display: inline-block;
+  vertical-align: middle;
+  background: url(/shared_static/images/icon_tupian_nor@2x.png) no-repeat center;
+  background-size: 100% auto;
+}
+#add_album_button.active div {
+  background: url(/shared_static/images/icon_tupian_on@2x.png) no-repeat center;
+  background-size: 100% auto;
+}
+#typeTab {
+  overflow: hidden;
+  margin: -.150rpx;
+}
+#add_album_button span {
+  margin-left:20.25rpx;
+}
+.typeTab_item {
+  width: 144rpx;
+  height: 84rpx;
+  border-radius:42rpx;
+  line-height: 84rpx;
+  text-align: center;
+  float: left;
+  background: #f6f6f6;
+  margin:15rpx;
+  color:#333333;
+  font-size:33.75rpx;
+}
+.typeTab_item.active {
+  background: #20d575;
+  color: white;
+}

@@ -1,0 +1,42 @@
+page {
+  background: white;
+}
+#search_album {
+  padding-top:20rpx;
+}
+#search {
+  width: 714.75rpx;
+  height: 69.75rpx;
+  position: relative;
+  background: rgba(255, 255, 255, 0.9);
+  line-height: 69.75rpx;
+  padding: 0 17.25rpx;
+  z-index: 2;
+  margin: auto;
+  border-radius: 35rpx;
+  background: #F8F8F8;
+}
+#search image {
+  width: 38.25rpx;
+  height: 38.25rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+#search input {
+  height: 100%;
+  width: 600rpx;
+  vertical-align: middle;
+  background: transparent;
+  border: 0;
+  font-size: 30rpx;
+  color: #666666;
+  display: inline-block;
+  margin-left: 10rpx;
+}
+#search_list_ul {
+  margin-top:20rpx;
+}
+#search_list_ul navigator {
+  padding:30rpx 20rpx;
+  font-size:28rpx;
+}

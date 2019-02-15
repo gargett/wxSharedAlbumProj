@@ -1,0 +1,33 @@
+<view id='uploadtab' class='active'>
+    <view class="top_text">
+      <textarea placeholder="记录你的生活" id="batch_text" maxlength="120" bindinput="changeText"></textarea> 
+    </view>
+    <view class="pic_list">
+        <view>
+            <view class="picList_item add_pic registerHandler" catchtap='addPic'>
+              +
+            </view>
+            <view wx:for="{{picList}}" wx:for-index="idx" wx:key="{{*this}}" class="picList_item picList_item_render localimg" localid="{{item}}">
+              <image src="{{item}}" style="height:100%;width:100%" mode="aspectFill"></image>
+              <view class="deletePics" catchtap="delete_pic" data-idx="{{idx}}"><image src="http://bigdata.drpeng.com.cn/shared_static/images/close.png" mode="aspectFill"></image></view>
+            </view>
+        </view>
+    </view>
+    <view id="allmap"></view>
+    <!-- <view class="batch_info registerHandler" id="position_box" handler="openLocateList">
+        <view style="background: url('http://bigdata.drpeng.com.cn/shared_static/images/icon_weizhi@2x.png') no-repeat;background-position: center center;background-size: cover;"></view>
+        <view id='position_box_text'>所在位置</view>
+        <view></view>
+        <view class='jiaocha registerHandler' handler='resetLocal'>+</view>
+    </view>
+    <view class="batch_info registerHandler" id="date_box">
+        <view style="background: url('http://bigdata.drpeng.com.cn/shared_static/images/icon_shijian@2x.png') no-repeat;background-position: center center;background-size: cover;"></view>
+        <view id='date_box_text'>发布时间</view>
+        <view></view>
+        <view class='jiaocha registerHandler' handler='resetDate'>+</view>
+    </view> -->
+    <view class="upload_btn registerHandler" catchtap='upload'>上传</view>
+
+
+  <progress id='prog' percent="{{uploadProgress}}" hidden='{{!showProg}}'/>
+</view>

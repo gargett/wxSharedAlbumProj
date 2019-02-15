@@ -1,0 +1,10 @@
+<template name="album-detail-batch-user">
+  <view class="timeLinePic_item_user">
+    <view class="user_touxiag"><image mode="aspectFill" src="http://bigdata.drpeng.com.cn/album_static/{{ headimgurl }}"></image></view>
+    <view class="userDateLocal">
+      <view class="userName">{{ batch_owner_nick }}</view>
+      <view class="dateAndLocal"><text>{{ create_time }} </text><text>{{ upload_position }}</text></view>
+    </view>
+    <view class="more" handler='showMoreFunc' data-ownerType="{{batch_is_owner}}" data-batch_id="{{ batch_id }}" data-if_top="{{ if_top }}" bindtap='showMoreFunc'>...</view>
+  </view>
+</template>

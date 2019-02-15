@@ -1,0 +1,40 @@
+<import src='/page/template/confirm-box/confirm-box.wxml'/>
+<view class='tab' id="picLib">
+  <view id='picLibTabControl'>
+    <!-- <view class="pivLibNavControl" id="picLibLoadOrigin" catchtap="loadOriginPicLibImgs" hidden='{{!editMode}}'>加载原图</view> -->
+    <view class="pivLibNavControl" id="picLibDelete" catchtap="delectPicLibImgs" hidden='{{!editMode}}'>删除</view>
+    <view class="pivLibNavControl" id="picLibEdit" catchtap="toggleEditMode">{{!editMode?'编辑':'取消'}}</view>
+  </view>
+  <view id='hasNoPic' wx:if="{{ picList.length == 0 }}">
+    <view></view>
+    <view>还没上传过图片～</view>
+    <view class='registerHandler' handler='piclib_upload'>上传图片</view>
+  </view>
+  <block wx:else>
+    <view id='piclib_left'>
+      <view class="picLib_item" catchtap="{{editMode?'selectPic':'imgpreview'}}" data-picId="{{ item.picture_id }}"  wx:for="{{picList}}" wx:key="{{item.picture_id}}" wx:for-index="idx" wx:if="{{idx % 2 == 0}}" data-idx="{{idx}}">
+        <image class="tick" src='{{item.isSelected ? "http://bigdata.drpeng.com.cn/shared_static/images/tick3.png": "http://bigdata.drpeng.com.cn/shared_static/images/tick4.png"}}' hidden='{{!editMode}}'></image>
+        <image src="{{ item.locate_path }}" picId="{{ item.picture_id }}"></image>
+      </view>
+    </view>
+    <view id='piclib_right'>
+      <view class="picLib_item" catchtap="{{editMode?'selectPic':'imgpreview'}}" data-picId="{{ item.picture_id }}"  wx:for="{{picList}}" wx:key="{{item.picture_id}}" wx:for-index="idx" wx:if="{{idx % 2 != 0}}" data-idx="{{idx}}">
+        <image class="tick" src='{{item.isSelected ? "http://bigdata.drpeng.com.cn/shared_static/images/tick3.png": "http://bigdata.drpeng.com.cn/shared_static/images/tick4.png"}}' hidden='{{!editMode}}'></image>
+        <image src="{{ item.locate_path }}" picId="{{ item.picture_id }}"></image>
+      </view>
+    </view>
+  </block>
+  
+  <view class="foot_box" >
+      {{isLoading?'加载中':'到底了，亲~'}}
+  </view>
+  <view id="upload_hasPicList" class='greenboxshadow' catchtap='piclibUpload'>
+    <image src="http://bigdata.drpeng.com.cn/shared_static/images/camera.png"></image>
+    <view>上传</view>
+  </view>
+
+
+  <!-- 确认框板块 -->
+  <template is="confirm-box" data="{{ ...confirmBox }}"></template>
+
+</view>

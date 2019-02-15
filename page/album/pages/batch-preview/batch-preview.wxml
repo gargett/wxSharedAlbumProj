@@ -1,0 +1,24 @@
+<view id='batch_preview'>
+  <block wx:for="{{album_batch_viewst}}" wx:key="{{*this}}">
+    <view id='banner'>
+      <image id="banner_bg" src="http://bigdata.drpeng.com.cn/shared_static/images/batch_banner.png" mode='aspectFill'></image>
+      <view id="touxiang">
+        <image src="http://bigdata.drpeng.com.cn/album_static/{{ item.headimgurl }}" mode='aspectFill'></image>
+      </view>
+      <view id="info">
+        <view id="user_name">{{ item.batch_owner_nick }}</view>
+        <view id="date_and_local"><span id="date">{{ item.create_time }}</span><span id="local">{{ item.upload_position }}</span></view>
+      </view>
+      <view id="wenzi">{{ item.batch_text }} </view>
+    </view>
+    <view class="timeviewnePic_item_pics">
+      <block wx:for="{{item.pic_list}}" wx:key="{{*this}}">
+        <view class="timeLinePic_item_pics_item registerHandler" handler="imgpreview">
+          <image src="http://bigdata.drpeng.com.cn/album_static/{{item.locate_path}}" mode='aspectFill'></image>
+        </view>
+      </block>
+    </view>
+  </block>
+    <view id="see_more"  catchtap='seemore'>查看更多</view>
+    <view id="add_my_album" catchtap='addmyalbum'>我要创建</view>
+</view>

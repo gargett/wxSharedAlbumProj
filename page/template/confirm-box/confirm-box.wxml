@@ -1,0 +1,13 @@
+<template name="confirm-box">
+  <view class='wx_dialog_container' hidden="{{!isShow}}">
+      <view class='wx-mask'></view>
+      <view class='wx-dialog'>
+          <view class='wx-dialog-title'>{{ title }}</view>
+          <view class='wx-dialog-content'>{{ content }}</view>
+          <view class='wx-dialog-footer'>
+            <view class='wx-dialog-btn' catchtap='_cancelEvent'>{{ cancelText }}</view>
+            <view class='wx-dialog-btn' catchtap='{{confirmEvent}}'>{{ confirm }}</view>
+          </view>
+      </view>
+  </view>
+</template>

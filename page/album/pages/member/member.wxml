@@ -1,0 +1,42 @@
+<!--page/album/pages/member/member.wxml-->
+<view id="member">
+  <view id='search'>
+      <image src="http://bigdata.drpeng.com.cn/shared_static/images/search.png"></image>
+      <input bindinput="bindKeyInput" type="text" confirm-type="search" placeholder="请输入成员账号进行搜索" bindconfirm="bindconfirm"/>
+  </view>
+
+  <view id="memberList" >
+    <view id="memberListCount" >
+      <text>相册成员</text>
+      <text>{{items.length}}人</text>
+    </view>
+
+
+    <view wx:for="{{items}}" wx:for-index="index" wx:for-item="item" wx:key="userId" hidden='{{!item.isShow}}'>
+      <view class="itemMember" data-userId="{{item.rela_id}}"  bindtap="memberSetBox" >
+        <view>
+          <image class='headimg' src="{{'http://bigdata.drpeng.com.cn/album_static/'+item.headimgurl}}"></image>
+          <text class='userName'>{{item.nick_name}}</text>
+        </view>
+        <view>
+          <text class='owner'>{{item.role_type == 1?'管理员':''}}</text>
+          <image class='gogo' src="http://bigdata.drpeng.com.cn/image/aboutme_go.png"></image>
+        </view>
+        </view>
+      </view>
+  </view>
+   
+  <modal hidden="{{hiddeMemberSetting}}" title="{{confirmBoxText}}" confirm-text="确定" cancel-text="取消" bindcancel="confirmBoxCancel" bindconfirm="confirmBoxConfirm" style="">  
+    <radio-group  bindchange="radioChange" >
+        <view id="view-radio-group">
+        <view class="view-radio" wx:if="{{is_manager!=1}}"><text>查看ta个人主页 </text><radio name="radioSet" value="check" checked='checked'></radio></view>
+        <view class="view-radio" wx:if="{{is_manager==1}}"><text>查看ta个人主页 </text><radio name="radioSet" value="check"></radio></view>
+        <view class="view-radio" wx:if="{{is_manager==1}}"><text>删除</text><radio name="radioSet" value="delete"></radio></view>
+        <view class="view-radio" wx:if="{{is_manager==1}}"><text>将管理转移给ta</text><radio name="radioSet" value="transfer"></radio></view>
+        </view>
+    </radio-group>
+  </modal>
+   <button open-type="share" id="addNumber" class='content' catchtap='invite'>添加成员</button>
+</view>
+   
+
